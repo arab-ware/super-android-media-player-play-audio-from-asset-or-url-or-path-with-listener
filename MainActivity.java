@@ -36,7 +36,7 @@ import android.content.pm.PackageManager;
 
 public class MainActivity extends Activity {
 	public final int REQ_CD_AUDIOFILE = 101;
-	
+	private ArabWareMediaPlayer awmp;
 	private double currentDuration = 0;
 	private double maxDuration = 0;
 	private String pathOrUrlOrAsset = "";
@@ -144,8 +144,6 @@ public class MainActivity extends Activity {
 	}
 	
 	private void initializeLogic() {
-		_explain("hi brother/sister .....\n\n\ni will example every thing in this library\n\nbefore that ...\n\nthis is a simple library made by ArabWare\n\n\ni will be thankful if you take minute of your time to subscribe my channel if not\n\n\n\n\n\nThe name of class of library is ArabWareMediaPlayer \n\nso the variable name is ArabWareMediaPlayer\n\nso when you try to create it\n\nArabWareMediaPlayer a = new ArabWareMediaPlayer(YourActivityHere.this);\n\n\n\nmethods of the library\n\n\n\nYourVariable.setRawSource(Your Music Name in Your Project Here)\n\nexample awmp.setRawSource(R.raw.quran);\n\nYourVariable.setPathSource(File);\n\nthis can Be used To load a media player from storage or cache\n\nexample for storage\n\nYourVariable.setPathSource(new java.io.File(\"YourPath\"));\n\nexample for cache\n\nYourVariable.setPathSource(new java.io.File(YourActivityHere.this.getCacheDir(),\"Your File Name Or Path In Cache.....\"));\n\n\nYourVariable.setUrlSource(\"Link\");\n\n\nnote : only direct links that is downloadable .... i mean your can download them directly when paste in browser .... direct download\n\n\nYourVariable.setAssetSource(\"your file path in asset\");\n\nuse this if you want to play audio from asset .......\n\n\n\n\nYourVariable.getMediaPlayer().YourMethod(.....);\n\n\nthis is If You Think There is a method i did not put in my class .... and it is avaiable in MediaPlayer\n\n\nexample\n\nYourVarible.getMediaPlayer().setDataSource(........);\n\n\n\n\nfinally ..... you can set Listener.....\n\n\ni have put an example in onCreate");
-		_explain("مرحباً أخي / أخت ..... سأقوم بشرح هذه المكتبة قبل ذلك ...\n هذه مكتبة بسيطة من صنع ArabWare سأكون شاكرا إذا كنت تأخذ دقيقة من وقتك للاشتراك في قناتي\nاسم كلاس المكتبة هو ArabWareMediaPlayer لذا فإن اسم المتغير هو ArabWareMediaPlayer لذلك عندما تحاول إنشائه \n\nArabWareMediaPlayer a = new ArabWareMediaPlayer (YourActivityHere.this);\nوظائف المكتبة \nYourVariable.setRawSource (اسم الموسيقى الخاص بك في مشروعك هنا) \nمثال \nawmp.setRawSource (R.raw.quran); \n\nYourVariable.setPathSource (ملف);\n يمكن استخدام هذا لتحميل مشغل وسائط من التخزين أو ذاكرة التخزين المؤقت\n مثال للتخزين \nYourVariable.setPathSource (new java.io.File (\"مسارك\"));\nمثال المثال لذاكرة التخزين المؤقت \nYourVariable.setPathSource (new java.io.File (YourActivityHere.this.getCacheDir ()، \"اسم الملف أو المسار في ذاكرة التخزين المؤقت .....\")); \n\nYourVariable.setUrlSource (\"رابط مباشر\");\nملاحظة: الروابط المباشرة التي يمكن تنزيلها فقط .... أعني أنه يمكنك تنزيلها مباشرة عند اللصق في المتصفح .... تنزيل مباشر\n\n\n\nYourVariable.setAssetSource(\"asset مسار الملف في\");\n\nتستخدم لتشغيل وسائط صوتية من asset\n \nYourVariable.getMediaPlayer (). YourMethod (.....);\n\nهذا إذا كنت تعتقد أن هناك طريقة لم أضعها في صفي .... وهي متوفرة في MediaPlayer مثال \nYourVarible.getMediaPlayer (). setDataSource (........);\nأخيرًا ..... يمكنك ضبط listener و الذي هو يقوم بشيء معين تحدده حين يحدث شيء للمتغير الذي صنعته مثلا حين كذا و حين كذا..... ..... لقد قدمت مثالاً في onCreate");
 		awmp = new ArabWareMediaPlayer(MainActivity.this);
 		awmp.setMediaPlayerListener(new ArabWareMediaPlayer.MediaPlayerListener() {
 			 @Override
@@ -198,66 +196,8 @@ public class MainActivity extends Activity {
 		}
 	}
 	
-	public void _variable_name () {
-	}
-	private ArabWareMediaPlayer awmp;
-	{
-	}
+	
+	;
 	
 	
-	public void _explain (final String _readme) {
-		
-	}
-	
-	
-	@Deprecated
-	public void showMessage(String _s) {
-		Toast.makeText(getApplicationContext(), _s, Toast.LENGTH_SHORT).show();
-	}
-	
-	@Deprecated
-	public int getLocationX(View _v) {
-		int _location[] = new int[2];
-		_v.getLocationInWindow(_location);
-		return _location[0];
-	}
-	
-	@Deprecated
-	public int getLocationY(View _v) {
-		int _location[] = new int[2];
-		_v.getLocationInWindow(_location);
-		return _location[1];
-	}
-	
-	@Deprecated
-	public int getRandom(int _min, int _max) {
-		Random random = new Random();
-		return random.nextInt(_max - _min + 1) + _min;
-	}
-	
-	@Deprecated
-	public ArrayList<Double> getCheckedItemPositionsToArray(ListView _list) {
-		ArrayList<Double> _result = new ArrayList<Double>();
-		SparseBooleanArray _arr = _list.getCheckedItemPositions();
-		for (int _iIdx = 0; _iIdx < _arr.size(); _iIdx++) {
-			if (_arr.valueAt(_iIdx))
-			_result.add((double)_arr.keyAt(_iIdx));
-		}
-		return _result;
-	}
-	
-	@Deprecated
-	public float getDip(int _input) {
-		return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, _input, getResources().getDisplayMetrics());
-	}
-	
-	@Deprecated
-	public int getDisplayWidthPixels() {
-		return getResources().getDisplayMetrics().widthPixels;
-	}
-	
-	@Deprecated
-	public int getDisplayHeightPixels() {
-		return getResources().getDisplayMetrics().heightPixels;
-	}
-}
+}
